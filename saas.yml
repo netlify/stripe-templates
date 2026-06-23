@@ -1,0 +1,25 @@
+ref: 9b3f7a1c0d52e84af6612d9c47be03152a8df49e
+repo: https://github.com/netlify/stripe-templates/tree/main/tanstack_start_netlify_saas/
+metadata:
+  name: Todo AI — TanStack Start on Netlify
+  description: Subscription SaaS starter with Stripe, Clerk, Neon, and Vercel
+  owner: netlify
+  official: true
+tags:
+  - tanstack
+  - tanstack start
+  - tanstack ai
+  - netlify
+  - netlify ai gateway
+  - netlify database
+  - netlify identity
+template_id: tanstack_start_netlify_saas
+commands:
+  install: pnpm install
+  dev: pnpm dev
+  deploy: pnpm deploy
+services:
+  - netlify/project
+  - netlify/ai-gateway
+  - netlify/database
+  - netlify/identity
