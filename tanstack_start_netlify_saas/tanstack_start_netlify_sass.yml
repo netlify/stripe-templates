@@ -1,0 +1,82 @@
+guided:
+  # Choose which guided category this template appears under in `init guided`.
+  category: saas
+  # Pick the framework filter key this template should match in guided mode.
+  framework: tanstack-start
+
+# Use one shared template id for all variants of the same starter.
+template: netlify/tanstack-start-saas
+# Give this concrete variant its own stable id.
+variant: teal-otter
+# Set this to `true` for the variant the CLI should recommend first.
+default: true
+# Write the short stack summary shown in the variant picker.
+variant_description: Netlify • Neon • Identity
+# Optionally run one shell command after files are copied into the new project.
+install_command: pnpm install
+
+metadata:
+  # Show this human-friendly name in browse results and confirmation cards.
+  name: Todo AI — TanStack Start on Netlify
+  # Explain in one line what the starter gives the user.
+  description: Subscription SaaS starter with Stripe, Clerk, Neon, and Vercel
+  # Name the team or person maintaining this template.
+  owner: netlify
+  # Mark whether this is an officially maintained template.
+  official: true
+  # Add optional search keywords to improve browse and search results.
+  tags:
+    - tanstack
+    - tanstack start
+    - tanstack ai
+    - netlify
+    - netlify ai gateway
+    - netlify database
+    - netlify identity
+
+# Point to the repo directory the CLI should copy from.
+repo: https://github.com/netlify/stripe-templates/tree/main/tanstack_start_netlify_saas/
+# Pin the exact commit so users get a reproducible template.
+ref: 9b3f7a1c0d52e84af6612d9c47be03152a8df49e
+
+# List the provider services the provisioning pipeline should provision.
+services:
+  - netlify/project
+  - netlify/ai-gateway
+  - netlify/database
+  - netlify/identity
+
+# Optionally list the commands the CLI should print after setup finishes.
+next_steps:
+  # Use a short heading so users know what this command is for.
+  - label: Run locally
+    # Print the exact command the user should run next.
+    command: pnpm dev
+  # Add as many labeled next-step commands as you want.
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: pnpm deploy
+
+# Optionally override which provider plan each traffic tier should pick.
+tier_plans:
+  # Use the provisioned service slug as the top-level key.
+  netlify/project:
+    # Use a string when the provider expects a named plan id.
+    free_lowest_cost: Netlify/free
+    starter_paid: Netlify/pro
+    higher_scale: Netlify/pro
+  netlify/ai-gateway:
+    free_lowest_cost: Netlify/free
+    starter_paid: Netlify/pro
+    higher_scale: Netlify/pro
+  netlify/database:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch
+  netlify/identity:
+    free_lowest_cost: Netlify/free
+    starter_paid: Netlify/pro
+    higher_scale: Netlify/pro
