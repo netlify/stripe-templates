@@ -13,7 +13,7 @@ default: true
 # Write the short stack summary shown in the variant picker.
 variant_description: Netlify • Neon • Identity
 # Optionally run one shell command after files are copied into the new project.
-install_command: pnpm install
+install_command: npm install
 
 metadata:
   # Show this human-friendly name in browse results and confirmation cards.
@@ -51,14 +51,14 @@ next_steps:
   # Use a short heading so users know what this command is for.
   - label: Run locally
     # Print the exact command the user should run next.
-    command: pnpm dev
+    command: npm run dev
   # Add as many labeled next-step commands as you want.
   - label: Build product with Codex
     command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
   - label: Build product with Claude
     command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
   - label: Deploy
-    command: pnpm deploy
+    command: npm run deploy
 
 # Optionally override which provider plan each traffic tier should pick.
 tier_plans:

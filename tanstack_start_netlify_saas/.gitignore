@@ -6,3 +6,9 @@ dist-ssr
 .env
 .netlify
 .tanstack
+
+# This is an npm project — keep package-lock.json, no other lockfiles.
+deno.lock
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
