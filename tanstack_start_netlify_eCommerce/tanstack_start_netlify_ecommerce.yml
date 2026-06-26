@@ -36,7 +36,7 @@ metadata:
 # Point to the repo directory the CLI should copy from.
 repo: https://github.com/netlify/stripe-templates/tree/main/tanstack_start_netlify_eCommerce/
 # Pin the exact commit so users get a reproducible template.
-ref: main
+ref: af2a92e
 
 # List the provider services the provisioning pipeline should provision.
 services:
