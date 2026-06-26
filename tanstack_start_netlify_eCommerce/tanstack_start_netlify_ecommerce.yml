@@ -1,0 +1,69 @@
+guided:
+  # Choose which guided category this template appears under in `init guided`.
+  category: ecommerce
+  # Pick the framework filter key this template should match in guided mode.
+  framework: tanstack-start
+
+# Use one shared template id for all variants of the same starter.
+template: netlify/tanstack-start-ecommerce
+# Give this concrete variant its own stable id.
+variant: amber-fox
+# Set this to `true` for the variant the CLI should recommend first.
+default: true
+# Write the short stack summary shown in the variant picker.
+variant_description: Netlify • Identity
+# Optionally run one shell command after files are copied into the new project.
+install_command: npm install
+
+metadata:
+  # Show this human-friendly name in browse results and confirmation cards.
+  name: Shop — TanStack Start on Netlify
+  # Explain in one line what the starter gives the user.
+  description: eCommerce storefront starter with product listings, detail pages, and search — ready for a Stripe checkout
+  # Name the team or person maintaining this template.
+  owner: netlify
+  # Mark whether this is an officially maintained template.
+  official: true
+  # Add optional search keywords to improve browse and search results.
+  tags:
+    - tanstack
+    - tanstack start
+    - ecommerce
+    - storefront
+    - netlify
+    - netlify identity
+
+# Point to the repo directory the CLI should copy from.
+repo: https://github.com/netlify/stripe-templates/tree/main/tanstack_start_netlify_eCommerce/
+# Pin the exact commit so users get a reproducible template.
+ref: main
+
+# List the provider services the provisioning pipeline should provision.
+services:
+  - netlify/project
+  - netlify/identity
+
+# Optionally list the commands the CLI should print after setup finishes.
+next_steps:
+  # Use a short heading so users know what this command is for.
+  - label: Run locally
+    # Print the exact command the user should run next.
+    command: npm run dev
+  # Add as many labeled next-step commands as you want.
+  - label: Add Stripe checkout with Claude
+    command: claude "Add a cart and Stripe Checkout to this storefront."
+  - label: Deploy
+    command: netlify deploy --build --prod
+
+# Optionally override which provider plan each traffic tier should pick.
+tier_plans:
+  # Use the provisioned service slug as the top-level key.
+  netlify/project:
+    # Use a string when the provider expects a named plan id.
+    free_lowest_cost: Netlify/free
+    starter_paid: Netlify/pro
+    higher_scale: Netlify/pro
+  netlify/identity:
+    free_lowest_cost: Netlify/free
+    starter_paid: Netlify/pro
+    higher_scale: Netlify/pro
